@@ -125,9 +125,62 @@ b {
 /************************************
  **         Targeted styles        **
  ************************************/
-@media screen and (max-width: 820px){
+@media screen and (max-width: 50rem){
     #small-screen-warning {
         display: block !important;
+    }
+    #container {
+        flex-direction: column !important;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 72rem) and (min-height: 50rem){
+    #content {
+        max-width: 64rem !important;
+    }
+    canvas {
+        max-width: 100% !important;
+    }
+}
+
+@media screen and (any-pointer: coarse) {
+    #small-screen-warning {
+        display: block !important;
+    }
+    #container {
+        flex-direction: column !important;
+        align-items: center;
+    }
+    #container > canvas {
+        max-width: min(720px, 100%);
+    }
+    #container > .tp-v {
+        width: 100% !important;
+    }
+    .tp-v {
+        line-height: 4em;
+        font-size: 1em !important;
+    }
+    .tp-lblv_v {
+        /** expand the right column to fill **/
+        flex-grow: 1 !important;
+    }
+    .tp-ckbiv_m /**checkbox**/
+    {
+        width: 4em !important;
+        height: 4em !important;
+    }
+    .tp-btnv_b, /**button**/
+    .tp-lstiv_s, /**list**/
+    .tp-sldiv_o /**slider**/
+    {
+        height: 4em !important;
+    }
+    .tp-sldiv_i::before /**slider handle**/
+    {
+        width: 3em !important;
+        height: 3em !important;
     }
 }
 
@@ -136,8 +189,11 @@ b {
     display: none; /* only show if the screen width is too small */
 }
 #draw-area {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 2px 4px 0;
     border-radius: 6px;
+}
+#container > * {
+    max-width: min(500px, 100%);
 }
 #content {
     margin: 1rem auto 1rem;
