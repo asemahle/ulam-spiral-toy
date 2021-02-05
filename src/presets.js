@@ -202,7 +202,9 @@ const PRESETS = [
     Object.assign({}, DEFAULT_PRESET, {
         size: 60,
         circleRadius: 2.3,
-        showLines: false,
+        showLines: true,
+        lineOpacity: 0.15,
+        showCircleBorders: false,
         circleCode: CIRCLE_CODES.squares
     }),
     /** Highlight Fibonacci **/
@@ -210,7 +212,9 @@ const PRESETS = [
         offset: 0,
         size: 60,
         circleRadius: 2.3,
-        showLines: false,
+        showLines: true,
+        lineOpacity: 0.15,
+        showCircleBorders: false,
         circleCode: CIRCLE_CODES.fib
     }),
     /** Highlight Triangular **/
@@ -218,7 +222,8 @@ const PRESETS = [
         offset: 0,
         size: 100,
         circleRadius: 2.3,
-        showLines: false,
+        showLines: true,
+        lineOpacity: 0.15,
         showCircleBorders: false,
         circleCode: CIRCLE_CODES.tri
     }),
