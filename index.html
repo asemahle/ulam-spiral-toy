@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ulam Spiral</title>
+    <script type="text/javascript" src="src/canvas.js"></script>
+    <script type="text/javascript" src="src/user-function.js"></script>
+    <script type="text/javascript" src="src/number-spiral.js"></script>
+    <script type="text/javascript" src="src/math.js"></script>
+    <script type="text/javascript" src="src/presets.js"></script>
+    <script type="text/javascript" src="tweakpane/tweakpane-1.5.8.js"></script>
+    <script type="text/javascript" src="./codemirror/codemirror.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./codemirror/codemirror.css">
+    <script src="./codemirror/codemirror-javascript.js"></script>
+</head>
+<body>
+<div id="content">
+    <h3>Ulam Spiral Toy</h3>
+    <h4 id="small-screen-warning">
+        This toy works best on larger screens, and may not work on touch devices. Sorry!
+    </h4>
+    <p>
+        A toy for exploring the <a href="https://en.wikipedia.org/wiki/Ulam_spiral">Ulam Spiral</a>.
+        Inspired by Jacob Yatsko's video <a href="https://www.youtube.com/watch?v=inrYsAusfPg">Extending Ulam Beyond Primes</a>.
+    </p>
+
+    <div id="container">
+        <canvas id="draw-area" width = "500" height = "500">
+            Your browser does not support canvas.
+            This demo requires canvas to run.
+            You are out of luck.
+        </canvas>
+    </div>
+
+    <div id="circle-code" class="modal">
+        <div class="modal-window">
+            <h4>Circle Fill Function &mdash; Javascript</h4>
+            <p>
+                The variable <code>values</code> contains a value between zero and one for each number on
+                the spiral. Zero means the circle should be white, one means black, intermediate values are
+                shades of grey.
+            </p>
+            <div id="circle-code-inner"></div>
+            <button id="circle-code-exit">Exit</button>
+            <button id="circle-code-save">Save and Exit</button>
+        </div>
+    </div>
+
+    <div id="line-code" class="modal">
+        <div class="modal-window">
+            <h4>Line Connection Function &mdash; Javascript</h4>
+            <p>
+                The variable <code>x</code> corresponds to a number on the spiral.
+                The output is a number.
+                If the number lies on the spiral, then a line will be drawn from <code>x</code> to the number.
+            </p>
+            <div id="line-code-inner"></div>
+            <button id="line-code-exit">Exit</button>
+            <button id="line-code-save">Apply Changes</button>
+        </div>
+    </div>
+
+    <h4>
+        Explanation of Advanced Parameters:
+    </h4>
+    <ul>
+        <li>
+            <b>Edit Circle Fill Function:</b>
+            <ul>
+                <li>
+                    edit the function that determines which circles are filled in
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Edit Line Connection Function:</b>
+            <ul>
+                <li>
+                    edit the function that determines where lines go
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Reset Time to 0:</b>
+            <ul>
+                <li>
+                    choose the "Animated Yatsko" preset to see what this does
+                </li>
+                <li>
+                    specifically, pressing this button sets <code>t = 0</code>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Animate:</b>
+            <ul>
+                <li>
+                    causes <code>t</code> to increase
+                </li>
+                <li>
+                    causes the image to be redrawn every frame. Can be CPU intensive if the functions are complex
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Speed:</b>
+            <ul>
+                <li>
+                    controls how fast <code>t</code> changes
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>w, y, z:</b>
+            <ul>
+                <li>
+                    these parameters are passed to the Circle Fill and Line Connection Function
+                </li>
+                <li>
+                    choose the "Function of w, y, z" preset, and play with these sliders for an example
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<footer>
+    Made for fun by Aidan Mahler
+    <br>
+    Code on Github (Put a link here)
+</footer>
+
+<script type="text/javascript" src="./src/main.js"></script>
+</body>
+</html>
