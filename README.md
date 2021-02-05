@@ -1,9 +1,12 @@
 # Ulam Spiral Toy
 
-A website for exploring the [Ulam spiral](https://en.wikipedia.org/wiki/Ulam_spiral).
-by Jacob Yatsko's video [Extending Ulam Beyond Primes](https://www.youtube.com/watch?v=inrYsAusfPg")
+A website for exploring the 
+[Ulam spiral](https://en.wikipedia.org/wiki/Ulam_spiral).
+Inspired by Jacob Yatsko's video 
+[Extending Ulam Beyond Primes](https://www.youtube.com/watch?v=inrYsAusfPg").
 
-Check it out: [insert url]
+Check out the 
+[live site](https://asemahle.github.io/ulam-spiral-toy/index.html).
 
 ## Features:
 - [Tweakpane](https://github.com/cocopon/tweakpane) control panel (:metal: NIFTY :metal:)
