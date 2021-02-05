@@ -121,6 +121,9 @@ b {
     font-weight: bold;
 }
 
+canvas {
+    width:500px;
+}
 
 /************************************
  **         Targeted styles        **
@@ -133,6 +136,9 @@ b {
         flex-direction: column !important;
         align-items: center;
     }
+    canvas {
+        width: min(500px, 100%) !important;
+    }
 }
 
 @media screen and (min-width: 72rem) and (min-height: 50rem){
@@ -140,7 +146,7 @@ b {
         max-width: 64rem !important;
     }
     canvas {
-        max-width: 100% !important;
+        width: min(720px, 100%) !important;
     }
 }
 
@@ -192,9 +198,7 @@ b {
     box-shadow: rgba(0, 0, 0, 0.2) 0 2px 4px 0;
     border-radius: 6px;
 }
-#container > * {
-    max-width: min(500px, 100%);
-}
+
 #content {
     margin: 1rem auto 1rem;
     color: #444;
