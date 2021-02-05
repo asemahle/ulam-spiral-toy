@@ -11,8 +11,8 @@ Check out the
 ## Features:
 - [Tweakpane](https://github.com/cocopon/tweakpane) control panel (:metal: NIFTY :metal:)
 - Visualize your own functions using the function editor (:star: SO COOL :star:)
-- Not optimized for tiny web browser (:boom: NEATO :boom:)
-- Probably broken on touch devices (:sunglasses: WOW :sunglasses:)
+- Mostly works on mobile and touch (:boom: NEATO :boom:)
+- Might break in mysterious ways (:sunglasses: WOW :sunglasses:)
 
 ## License
 MIT License. See `LICENSE.txt` for more information.
