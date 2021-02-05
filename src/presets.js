@@ -13,7 +13,8 @@ const PRESET_OPTIONS = {
     'Highlight Fibonacci': 7,
     'Highlight Triangular': 8,
     'Quadratic Residue': 9,
-    'Sine Dance': 10
+    'Sine Dance': 10,
+    'Curl': 11
 }
 
 const CIRCLE_CODE_PREAMBLE = `/** 
@@ -83,6 +84,14 @@ return values`,
  */
 for (let i = 0; i <= n; i++) {
     values[i] = Math.max(0, Math.sin(i*0.1 + t*0.001))
+}
+return values`,
+    curl: ` */
+let i = 1
+let q = 0.4 + 0.05 * Math.sin(0.00004 * t)
+while (i <= n && i**2 * q * 10) {
+    values[Math.floor(i**2 * q * 10)] = 1
+    i++
 }
 return values`
 }
@@ -245,5 +254,15 @@ const PRESETS = [
         lineOpacity: 0.25,
         circleCode: CIRCLE_CODES.sineDance,
         animate: true
+    }),
+    /** Curl **/
+    Object.assign({}, DEFAULT_PRESET, {
+        size: 50,
+        showCircleBorders: false,
+        circleRadius: 2.1,
+        lineOpacity: 0.25,
+        circleCode: CIRCLE_CODES.curl,
+        animate: true,
+        speed: 5
     })
 ]
