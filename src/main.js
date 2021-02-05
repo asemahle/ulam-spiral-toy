@@ -1,9 +1,7 @@
 // Setup canvas
-const canvas = document.getElementById('draw-area')
-const ctx = canvas.getContext('2d')
-const w = canvas.width
-canvas.height = w
-const h = canvas.height
+const svg = document.getElementById('draw-area')
+const w = 500
+const h = 500
 
 // Setup Code Mirror
 // These variables are both null because the code mirror editors
@@ -33,6 +31,13 @@ let connectionFunc = new UserFunction(
     'Line Connection',
     '"use strict"; let [x, t, w, y, z, n] = arguments;')
 
+let circles = []
+let lines = []
+for (let i = 0; i <= 100**2; i++) {
+    circles.push(add(svg, 'circle'))
+    lines.push(add(svg, 'path'))
+}
+
 /*************************************
  *       SIMULATION DRAW LOOP       **
  *************************************/
@@ -61,7 +66,6 @@ let loop = (timestamp) => {
     }
 
     if (params.animate || refreshCanvas) {
-        ctx.clearRect(0,0,w,h)
         let max = spiral.maxValue()
         if (params.showCircles) {
             let values = []
@@ -70,14 +74,18 @@ let loop = (timestamp) => {
             for (let i = 0; i < map.length; i++) {
                 let shade = values[i]
                 let point = map[i]
-                addCircle(ctx, point[0], point [1], params.circleRadius, {
-                    fillStyle:  `rgba(0,0,0,${shade})`,
-                    strokeStyle: params.showCircleBorders ? 'black' : null
+                setAttrs(circles[i], {
+                    cx: point[0],
+                    cy: point[1],
+                    r: params.circleRadius,
+                    fill: 'black',
+                    'fill-opacity': shade,
+                    stroke: params.showCircleBorders ? 'black' : 'none'
                 })
             }
         }
 
-        if (params.showLines) {
+        if (false && params.showLines) {
             for (let i = spiral.offset; i <= max; i++) {
                 let to = connectionFunc.run(i, elapsed, params.w, params.y, params.z, max)
                 if (to > max || to < 0) continue
