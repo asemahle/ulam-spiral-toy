@@ -87,7 +87,8 @@ let loop = (timestamp) => {
                 if (p1 !== p2) {
                     point = lerp2D(p1, p2, to - Math.floor(to))
                 }
-                addPath(ctx, map[i].concat(point), {strokeStyle: 'black', globalAlpha: params.lineOpacity})
+                addPath(ctx, map[i].concat(point),
+                    {strokeStyle: 'black', globalAlpha: params.lineOpacity})
             }
         }
         refreshCanvas = false;
