@@ -18,7 +18,7 @@
 <div id="content">
     <h3>Ulam Spiral Toy</h3>
     <h4 id="small-screen-warning">
-        This toy works best on larger screens, and may not work on touch devices. Sorry!
+        This site works best on large screens with a mouse.
     </h4>
     <p>
         A toy for exploring the <a href="https://en.wikipedia.org/wiki/Ulam_spiral">Ulam Spiral</a>.
@@ -26,7 +26,7 @@
     </p>
 
     <div id="container">
-        <canvas id="draw-area" width = "500" height = "500">
+        <canvas id="draw-area" width = "720" height = "720">
             Your browser does not support canvas.
             This demo requires canvas to run.
             You are out of luck.
@@ -62,6 +62,114 @@
     </div>
 
     <h4>
+        Explanation of Presets:
+    </h4>
+    <ul>
+        <li>
+            <b>Default</b>
+            <ul>
+                <li>
+                    An Ulam Spiral.
+                    The circles along the spiral represent numbers, starting at one.
+                    Primes are filled in black.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Ulam Spiral</b>
+            <ul>
+                <li>
+                    An Ulam spiral, zoomed out, and only showing the prime numbers.
+                    Notice how the primes seem to lie on diagonal lines. Interesting!
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Yatsko (line to sqrt(x))</b>
+            <ul>
+                <li>
+                    Draws lines from each number on the spiral to its square root.
+                    Click the "Edit Line Connection Function" button to modify the function!
+                    Inspired by Jacob Yatsko's <a href="https://www.youtube.com/watch?v=inrYsAusfPg">video</a>.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Line to 4x</b>
+            <ul>
+                <li>
+                    Draws lines from each number to 4 times that number.
+                    Eg., there will be a line from 1 to 4, a line from 2 to 8, etc...
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Animated Yatsko</b>
+            <ul>
+                <li>
+                    Similar to "Yatsko", but how lines are drawn changes over time.
+                    Click the "Edit Line Connection Function" to see the specifics.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Function of w, y, z</b>
+            <ul>
+                <li>
+                    Draws lines from each number to a multiple of that number.
+                    The multiple is determined by the w, y, and z sliders.
+                    Each slider changes the multiple at a different rate (w changes it quickly, z slowly).
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Highlight Squares</b>
+            <ul>
+                <li>
+                    Colours in the square numbers (1, 4, 9, 16,...)
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Highlight Fibonacci</b>
+            <ul>
+                <li>
+                    Colours in the Fibonacci numbers (0,1,1,2,3,5,8,13,...)
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Highlight Triangular</b>
+            <ul>
+                <li>
+                    Colours in the <a href="https://en.wikipedia.org/wiki/Triangular_number">triangular numbers</a>.
+                    Because triangular numbers increase quadratically they create distinct "arms" that spiral outwards.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Quadratic Residue</b>
+            <ul>
+                <li>
+                    Draws lines from each number to that number squared (mod n),
+                    where n is the maximum number on the spiral.
+                    The result is that <a href="https://en.wikipedia.org/wiki/Quadratic_residue">quadratic residues</a>
+                    modulo n have many lines going in.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Sine Dance</b>
+            <ul>
+                <li>
+                    Shades the circles based on a sine function, changing over time.
+                    Click the "Edit Circle Fill Function" button to see specifics.
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>
         Explanation of Advanced Parameters:
     </h4>
     <ul>
@@ -69,7 +177,7 @@
             <b>Edit Circle Fill Function:</b>
             <ul>
                 <li>
-                    edit the function that determines which circles are filled in
+                    Edit the function that determines which circles are filled in
                 </li>
             </ul>
         </li>
@@ -77,7 +185,7 @@
             <b>Edit Line Connection Function:</b>
             <ul>
                 <li>
-                    edit the function that determines where lines go
+                    Edit the function that determines where lines go
                 </li>
             </ul>
         </li>
@@ -85,10 +193,10 @@
             <b>Reset Time to 0:</b>
             <ul>
                 <li>
-                    choose the "Animated Yatsko" preset to see what this does
+                    Choose the "Animated Yatsko" preset to see what this does
                 </li>
                 <li>
-                    specifically, pressing this button sets <code>t = 0</code>
+                    Specifically, pressing this button sets <code>t = 0</code>
                 </li>
             </ul>
         </li>
@@ -96,10 +204,10 @@
             <b>Animate:</b>
             <ul>
                 <li>
-                    causes <code>t</code> to increase
+                    Causes <code>t</code> to increase
                 </li>
                 <li>
-                    causes the image to be redrawn every frame. Can be CPU intensive if the functions are complex
+                    Causes the image to be redrawn every frame. Can be CPU intensive if the functions are complex
                 </li>
             </ul>
         </li>
@@ -107,7 +215,7 @@
             <b>Speed:</b>
             <ul>
                 <li>
-                    controls how fast <code>t</code> changes
+                    Controls how fast <code>t</code> changes
                 </li>
             </ul>
         </li>
@@ -115,10 +223,10 @@
             <b>w, y, z:</b>
             <ul>
                 <li>
-                    these parameters are passed to the Circle Fill and Line Connection Function
+                    These parameters are passed to the Circle Fill and Line Connection Function
                 </li>
                 <li>
-                    choose the "Function of w, y, z" preset, and play with these sliders for an example
+                    Choose the "Function of w, y, z" preset, and play with these sliders for an example
                 </li>
             </ul>
         </li>
