@@ -51,7 +51,7 @@ function addPath(ctx, pts, attrs, loop=false) {
     if (attrs.strokeStyle != null) {
         ctx.stroke()
     }
-    if (attrs.fillStyle != null ) {
+    if (attrs.fillStyle != null) {
         ctx.fill()
     }
     unsetAttrs(ctx, attrs, oldAttrs)
