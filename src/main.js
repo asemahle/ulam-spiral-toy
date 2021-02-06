@@ -6,14 +6,14 @@ canvas.height = w
 const h = canvas.height
 
 // Setup Code Mirror
-// These variables are both null because the code mirror editors
-//   are hidden when the application runs. Code mirror has weird
+// Initially set to null because the CodeMirror editors
+//   are hidden when the application starts. CodeMirror has weird
 //   bugs if you try to create an editor in a hidden region
-// These get populated with code mirror editors the first time
-//   that those editors appear on screen
-//   (eg., click "Edit Circle Fill Function")
-let circleCMEditor = null //code mirror editor for the circle function
-let lineCMEditor = null //code mirror editor for the line function
+// These variables get populated on-demand the first time
+//   that the editors appear on screen
+//   (eg., when the user clicks "Edit Circle Fill Function")
+let circleCMEditor = null //editor for the circle function
+let lineCMEditor = null //editor for the line function
 
 // Setup simulation
 const params = Object.assign({}, PRESETS[0]) //default parameters for the simulation

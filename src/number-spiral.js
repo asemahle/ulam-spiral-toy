@@ -1,7 +1,7 @@
 /**
  * Maps points on a number spiral to a region
- * The spiral is has size number of points along each edge
- *   and is stretched to fit in a region with dimensions width by height.
+ * The number of points along an edge of the spiral is defined by "size"
+ *   and the spiral is stretched to fit a region with dimensions "width" by "height".
  * @param offset  the first number in the spiral. Cannot be negative
  * @param size  number of points along an edge of the spiral
  * @param width  width of the region
@@ -56,7 +56,7 @@ NumberSpiral.prototype.getCoords = function(i) {
 
 /**
  * Returns an array of points (arrays with two items [x, y]).
- * The point in the ith position corresponds to the coordinate of  the
+ * The point in the ith position corresponds to the coordinate of the
  *   number i on the spiral.
  *  The returned array contains this.maxValue() points.
  * @returns {[]}

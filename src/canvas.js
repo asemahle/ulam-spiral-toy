@@ -33,13 +33,14 @@ function unsetAttrs(ctx, attrs, oldAttrs) {
 
 /**
  * Draws a path to the provided canvas context (ctx)
- * Canvas context attributes are UNCHANGED by this function.
+ * Preserves canvas context: any changes made to ctx are
+ *   undone before the function returns.
  * @param ctx   canvas context
  * @param pts   list of numbers, representing points.
  *              E.g [0,1,2,3] represents point (0,1) then (2,3)
  * @param attrs   apply these attrs to the ctx before drawing
  *                these changes to ctx are undone after drawing
- * @param loop    if true the path is closed
+ * @param loop   closes the path (forming a loop) if true
  */
 function addPath(ctx, pts, attrs, loop=false) {
     const oldAttrs = setAttrs(ctx, attrs)
@@ -59,7 +60,8 @@ function addPath(ctx, pts, attrs, loop=false) {
 
 /**
  * Draws a circle to the provided canvas context (ctx)
- * Canvas context attributes are UNCHANGED by this function.
+ * Preserves canvas context: any changes made to ctx are
+ *   undone before the function returns.
  * @param ctx  canvas context
  * @param x    x position (pixels)
  * @param y    y position (pixels)

@@ -68,4 +68,6 @@ UserFunction.prototype.run = function() {
             this.function = this.stack[this.stack.length - 1]
         }
     }
+    alert("Fatal error trying to run user function: could not return to a good state")
+    return null
 }
