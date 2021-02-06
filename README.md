@@ -5,6 +5,8 @@ A website for exploring the
 Inspired by Jacob Yatsko's video 
 [Extending Ulam Beyond Primes](https://www.youtube.com/watch?v=inrYsAusfPg").
 
+![screenshots from the website](screenshots.png)
+
 Each circle on the spiral represents an integer, starting at 1 in the center, 
 and increasing outwards.
 This tool lets you colour in numbers, and draw lines in different ways.
