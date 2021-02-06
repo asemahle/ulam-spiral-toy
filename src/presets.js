@@ -161,7 +161,7 @@ const PRESETS = [
         size: 60,
         showCircleBorders: false,
         circleRadius: 2.3,
-        showLines: false,
+        lineOpacity: 0.129,
     }),
     /** Jacob Yatsko **/
     Object.assign({}, DEFAULT_PRESET, {
