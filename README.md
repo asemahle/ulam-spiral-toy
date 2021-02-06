@@ -5,6 +5,11 @@ A website for exploring the
 Inspired by Jacob Yatsko's video 
 [Extending Ulam Beyond Primes](https://www.youtube.com/watch?v=inrYsAusfPg").
 
+Each circle on the spiral represents an integer, starting at 1 in the center, 
+and increasing outwards.
+This tool lets you colour in numbers, and draw lines in different ways.
+The "classic" colouring has the primes coloured in black, shown by default.
+
 Check out the 
 [live site](https://asemahle.github.io/ulam-spiral-toy/index.html).
 
