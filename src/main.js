@@ -126,10 +126,13 @@ document.getElementById('line-code-save').onclick = () => {
  **    SETUP THE CONTROL PANEL (Tweakpane)    **
  ***********************************************/
 const pane = new Tweakpane({
-    title: 'Parameters',
     container: document.getElementById('container')
 })
-pane.addInput(params, 'preset', {
+const mainSettings = pane.addFolder({
+    title: 'Settings',
+    expanded: true
+})
+mainSettings.addInput(params, 'preset', {
     options: PRESET_OPTIONS
 }).on('change', (value) => {
     if (value !== -1) {
@@ -142,30 +145,30 @@ pane.addInput(params, 'preset', {
         pane.refresh()
     }
 })
-pane.addInput(params, 'size', {
+mainSettings.addInput(params, 'size', {
     min: 2,
     max: 100,
     step: 1
 }).on('change', () => refreshSpiral = true)
-pane.addInput(params, 'zoom', {
+mainSettings.addInput(params, 'zoom', {
     min: 1,
     max: 10,
 }).on('change', () => refreshSpiral = true)
-pane.addInput(params, 'offset', {
+mainSettings.addInput(params, 'offset', {
     label: 'start at',
     options: {
         zero: 0,
         one: 1
     }
 }).on('change', () => refreshSpiral = true)
-pane.addInput(params, 'showCircles')
-pane.addInput(params, 'showCircleBorders')
-pane.addInput(params, 'circleRadius', {
+mainSettings.addInput(params, 'showCircles')
+mainSettings.addInput(params, 'showCircleBorders')
+mainSettings.addInput(params, 'circleRadius', {
     min: 0,
     max: 20
 })
-pane.addInput(params, 'showLines')
-pane.addInput(params, 'lineOpacity', {
+mainSettings.addInput(params, 'showLines')
+mainSettings.addInput(params, 'lineOpacity', {
     min: 0,
     max: 1,
     step: 0.001
