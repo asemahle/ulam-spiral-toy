@@ -9,7 +9,7 @@
  * @returns {[]}   the old attributes
  */
 function setAttrs(ctx, attrs) {
-    let oldAttrs = []
+    const oldAttrs = []
     for (let key in attrs) {
         oldAttrs.push(ctx[key])
         ctx[key] = attrs[key]
@@ -42,7 +42,7 @@ function unsetAttrs(ctx, attrs, oldAttrs) {
  * @param loop    if true the path is closed
  */
 function addPath(ctx, pts, attrs, loop=false) {
-    let oldAttrs = setAttrs(ctx, attrs)
+    const oldAttrs = setAttrs(ctx, attrs)
     ctx.beginPath()
     for (let i = 0; i < pts.length-1; i += 2){
         ctx.lineTo(pts[i], pts[i+1])
@@ -68,7 +68,7 @@ function addPath(ctx, pts, attrs, loop=false) {
  *                these changes to ctx are undone after drawing
  */
 function addCircle(ctx, x, y, rad, attrs) {
-    let oldAttrs = setAttrs(ctx, attrs)
+    const oldAttrs = setAttrs(ctx, attrs)
     ctx.beginPath()
     ctx.arc(x, y, rad, 0, 2 * Math.PI)
     if (attrs.strokeStyle != null) {

@@ -62,15 +62,15 @@ let loop = (timestamp) => {
 
     if (params.animate || refreshCanvas) {
         ctx.clearRect(0,0,w,h)
-        let max = spiral.maxValue()
+        const max = spiral.maxValue()
         if (params.showCircles) {
             let values = []
             for (let i = 0; i <= max; i++) values.push(0)
             values = circleFunc.run(values, elapsed, params.w, params.y, params.z, max)
             for (let i = 0; i < map.length; i++) {
-                let shade = values[i]
-                let point = map[i]
-                addCircle(ctx, point[0], point [1], params.circleRadius, {
+                const shade = values[i]
+                const point = map[i]
+                addCircle(ctx, point[0], point[1], params.circleRadius, {
                     fillStyle:  `rgba(0,0,0,${shade})`,
                     strokeStyle: params.showCircleBorders ? 'black' : null
                 })
@@ -79,10 +79,10 @@ let loop = (timestamp) => {
 
         if (params.showLines) {
             for (let i = spiral.offset; i <= max; i++) {
-                let to = connectionFunc.run(i, elapsed, params.w, params.y, params.z, max)
+                const to = connectionFunc.run(i, elapsed, params.w, params.y, params.z, max)
                 if (to > max || to < 0) continue
-                let p1 = map[Math.floor(to)]
-                let p2 = map[Math.ceil(to)]
+                const p1 = map[Math.floor(to)]
+                const p2 = map[Math.ceil(to)]
                 let point = p1
                 if (p1 !== p2) {
                     point = lerp2D(p1, p2, to - Math.floor(to))

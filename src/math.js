@@ -9,7 +9,7 @@
  * @returns {*[]}
  */
 function lerp2D(p1, p2, f) {
-    let dx = p2[0] - p1[0]
-    let dy = p2[1] - p1[1]
+    const dx = p2[0] - p1[0]
+    const dy = p2[1] - p1[1]
     return [p1[0] + dx * f, p1[1] + dy * f]
 }

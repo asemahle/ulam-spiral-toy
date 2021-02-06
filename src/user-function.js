@@ -46,7 +46,7 @@ UserFunction.prototype.generateFunction = function(code) {
  * @param code   String
  */
 UserFunction.prototype.set = function(code) {
-    let f = this.generateFunction(code)
+    const f = this.generateFunction(code)
     if (f.toString() === this.function.toString()) return //new function is identical to current
     this.stack.push(f)
     this.function = f
@@ -57,7 +57,7 @@ UserFunction.prototype.set = function(code) {
  * @returns {*}   Whatever the user function returns
  */
 UserFunction.prototype.run = function() {
-    let stackSize = this.stack.length
+    const stackSize = this.stack.length
     for (let i = 0; i < stackSize; i++) {
         try {
             return this.function(...arguments)

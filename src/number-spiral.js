@@ -25,10 +25,10 @@ function NumberSpiral(offset, size, width, height, margin=10) {
  */
 NumberSpiral.prototype.getCartesianCoords = function(i) {
     i = Math.max(0, i - this.offset)
-    let k = Math.floor(Math.sqrt(i))
-    let j = i - k*k
-    let verticalOffset = Math.min(j, k)
-    let horizontalOffset = Math.max(0, j - verticalOffset)
+    const k = Math.floor(Math.sqrt(i))
+    const j = i - k*k
+    const verticalOffset = Math.min(j, k)
+    const horizontalOffset = Math.max(0, j - verticalOffset)
     return k % 2 ?
         [(k + 1) / 2 - horizontalOffset, (1 - k) / 2 + verticalOffset] :
         [-k / 2 + horizontalOffset, k / 2 - verticalOffset]
@@ -41,10 +41,10 @@ NumberSpiral.prototype.getCartesianCoords = function(i) {
  * @returns {number[]}
  */
 NumberSpiral.prototype.getCoords = function(i) {
-    let cartesianCoords = this.getCartesianCoords(i)
-    let vspace = (this.height - this.margin*2) / (this.size - 1)
-    let hspace = (this.width - this.margin*2) / (this.size - 1)
-    let offset = this.size % 2 ?  //location of 0
+    const cartesianCoords = this.getCartesianCoords(i)
+    const vspace = (this.height - this.margin*2) / (this.size - 1)
+    const hspace = (this.width - this.margin*2) / (this.size - 1)
+    const offset = this.size % 2 ?  //location of 0
         [((this.size-1)/2) * hspace, ((this.size-1)/2) * vspace] :
         [(this.size/2 - 1)* hspace, (this.size/2) * vspace]
     return [
@@ -62,9 +62,9 @@ NumberSpiral.prototype.getCoords = function(i) {
  * @returns {[]}
  */
 NumberSpiral.prototype.getCoordinateMap = function() {
-    let maxValue = this.maxValue()
-    let map = []
-    let zeroCoords = this.getCoords(0)
+    const maxValue = this.maxValue()
+    const map = []
+    const zeroCoords = this.getCoords(0)
     for (let i = 0; i < this.offset; i++) {
         map.push(zeroCoords)
     }
